@@ -1,13 +1,19 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-<id>com.github.yorik56.gitmoji-commit-column</id>
-<name>Gitmoji Commit Column</name>
-    <description><p>Adds a custom column to the commit log to display Gitmojis, making commit messages easier to read and understand.</p></description>
-<vendor>yorik56</vendor>
+    <id>com.github.yorik56.gitmoji-commit-column</id>
+    <name>Gitmoji Commit Column</name>
+    <description>
+        <p>Adds a custom column to the commit log to display Gitmojis, making commit messages easier to read and understand.</p>
+    </description>
+    <vendor>yorik56</vendor>
 
-<depends>com.intellij.modules.platform</depends>
+    <!-- Dépendances nécessaires -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.vcs</depends>
+    <depends>com.jetbrains.php</depends> <!-- Ajout explicite pour PhpStorm -->
 
-<extensions defaultExtensionNs="com.intellij">
-    <vcsLogCustomColumn implementation="com.github.yorik56.gitmojicommitcolumn.GitmojiCustomColumn"/>
-</extensions>
+
+    <!-- Extensions -->
+    <extensions defaultExtensionNs="com.intellij">
+        <vcsLogCustomColumn implementation="com.github.yorik56.gitmojicommitcolumn.GitmojiCustomColumn"/>
+    </extensions>
 </idea-plugin>
